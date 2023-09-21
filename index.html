@@ -225,7 +225,9 @@
               </div>
             </div>
           </div>
-          <button onclick="getTax()" class="btn btn-info mt-5">Tính thuế</button>
+          <button onclick="getTax()" class="btn btn-info mt-5">
+            Tính thuế
+          </button>
           <div id="resultTax" class="mt-5 alert-success"></div>
         </div>
         <!-- BT 4 -->
@@ -235,25 +237,30 @@
           role="tabpanel"
           aria-labelledby="bt4-tab"
         >
-        <div class="form-group">
+          <div class="form-group">
             <div class="container">
               <div class="row">
                 <div class="col-sm">
-                    <select class="form-select form-select-md" name="" id="customerType">
-                        <option value="">Loại khách hàng</option>
-                        <option value="A">Nhà dân</option>
-                        <option value="B">Doanh nghiệp</option>
-                      </select>
+                  <select
+                    class="form-select form-select-md"
+                    name=""
+                    id="customerType"
+                    onclick="showConnection()"
+                  >
+                    <option value="">Loại khách hàng</option>
+                    <option value="A">Nhà dân</option>
+                    <option value="B">Doanh nghiệp</option>
+                  </select>
                 </div>
                 <div class="col-sm">
                   <input
-                    type="number"
+                    type="text"
                     class="form-control"
                     id="customerId"
                     placeholder="Mã khách hàng"
                   />
                 </div>
-                <div class="col-sm">
+                <div class="col-sm" id="connection">
                   <input
                     type="number"
                     class="form-control"
@@ -262,17 +269,19 @@
                   />
                 </div>
                 <div class="col-sm">
-                    <input
-                      type="number"
-                      class="form-control"
-                      id="channelNumber"
-                      placeholder="Số kênh cao cấp"
-                    />
-                  </div>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="channelNumber"
+                    placeholder="Số kênh cao cấp"
+                  />
+                </div>
               </div>
             </div>
           </div>
-          <button onclick="getTax()" class="btn btn-info mt-5">Tính tiền cáp</button>
+          <button onclick="getCableCost()" class="btn btn-info mt-5">
+            Tính tiền cáp
+          </button>
           <div id="resultCableBill" class="mt-5 alert-success"></div>
         </div>
       </div>
@@ -290,6 +299,17 @@
       integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+      function showConnection() {
+        let customerType = document.getElementById("customerType").value;
+        if (customerType == "A") {
+          document.getElementById("connection").style.display = "none";
+        } else {
+          document.getElementById("connection").style.display = "block";
+        }
+      }
+    </script>
 
     <script src="./bt.js"></script>
   </body>

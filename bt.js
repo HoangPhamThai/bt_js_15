@@ -124,3 +124,34 @@ function getTax(){
         <p class="text-primary">Tên: ${fullName}. Thuế thu nhập cá nhân: ${new Intl.NumberFormat('en-US').format(taxed)} VND</p>
         `
 }
+
+// Bai 4
+function getCableCost(){
+    console.log('get cable')
+    let customerType = document.getElementById("customerType").value
+    let customerId = document.getElementById("customerId").value
+    let channelNumber = parseInt(document.getElementById("channelNumber").value)
+    let connectionNumber = 0
+    let cost = 0
+    // Nha dan
+    if (customerType == "A"){
+        cost = 4.5 + 20.5 + 7.5 * channelNumber
+    }else{
+        connectionNumber = parseInt(document.getElementById("connectionNumber").value)
+        cost = 15
+        if (connectionNumber <= 10){
+            cost += 75
+        }else{
+            cost += 75 + (connectionNumber - 10)*5
+        }
+        cost += 50 * connectionNumber
+    }
+
+    document.getElementById("resultCableBill").innerHTML = `
+        <p class="text-primary">Mã khách hàng: ${customerId}. Tiền cáp: ${new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        }).format(cost)}</p>
+        `
+
+    }
