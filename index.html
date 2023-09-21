@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="bt1-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#bt1"
+            type="button"
+            role="tab"
+            aria-controls="bt1"
+            aria-selected="true"
+          >
+            Bài tập 1
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="bt2-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#bt2"
+            type="button"
+            role="tab"
+            aria-controls="bt2"
+            aria-selected="false"
+          >
+            Bài tập 2
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="bt3-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#bt3"
+            type="button"
+            role="tab"
+            aria-controls="bt3"
+            aria-selected="false"
+          >
+            Bài tập 3
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="bt4-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#bt4"
+            type="button"
+            role="tab"
+            aria-controls="bt4"
+            aria-selected="false"
+          >
+            Bài tập 4
+          </button>
+        </li>
+      </ul>
+      <div class="tab-content pt-3" id="myTabContent">
+        <!-- BT 1 -->
+        <div
+          class="tab-pane fade show active"
+          id="bt1"
+          role="tabpanel"
+          aria-labelledby="bt1-tab"
+        >
+          <div class="form-group">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="standardScore"
+                    placeholder="Điểm chuẩn"
+                  />
+                </div>
+                <div class="col-sm">
+                  <select class="form-select form-select-md" name="" id="area">
+                    <option value="">Chọn khu vực</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                  </select>
+                </div>
+                <div class="col-sm">
+                  <select
+                    class="form-select form-select-md"
+                    name=""
+                    id="object"
+                  >
+                    <option value="">Chọn đối tượng</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row pt-4">
+                <div class="col-sm">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="score1"
+                    placeholder="Điểm môn 1"
+                  />
+                </div>
+                <div class="col-sm">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="score2"
+                    placeholder="Điểm môn 2"
+                  />
+                </div>
+                <div class="col-sm">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="score3"
+                    placeholder="Điểm môn 3"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button onclick="getEnrollStatus()" class="btn btn-info mt-5">
+            Kết quả
+          </button>
+          <div id="resultEnrollStatus" class="mt-5 alert-success"></div>
+        </div>
+        <!-- BT 2 -->
+        <div
+          class="tab-pane fade"
+          id="bt2"
+          role="tabpanel"
+          aria-labelledby="bt2-tab"
+        >
+          <div class="form-group">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fullName"
+                    placeholder="Tên"
+                  />
+                </div>
+                <div class="col-sm">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="kwNumber"
+                    placeholder="Số KW"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button onclick="getElectricBill()" class="btn btn-info mt-5">
+            Tính tiền điện
+          </button>
+          <div id="resultElectricBill" class="mt-5 alert-success"></div>
+        </div>
+        <!-- BT 3 -->
+        <div
+          class="tab-pane fade"
+          id="bt3"
+          role="tabpanel"
+          aria-labelledby="bt3-tab"
+        >
+          <div class="form-group">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="taxFullName"
+                    placeholder="Họ tên"
+                  />
+                </div>
+                <div class="col-sm">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="annualIncome"
+                    placeholder="Tổng thu nhập năm"
+                  />
+                </div>
+                <div class="col-sm">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="depedenceNumber"
+                    placeholder="Số người phụ thuộc"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button onclick="getTax()" class="btn btn-info mt-5">Tính thuế</button>
+          <div id="resultTax" class="mt-5 alert-success"></div>
+        </div>
+        <!-- BT 4 -->
+        <div
+          class="tab-pane fade"
+          id="bt4"
+          role="tabpanel"
+          aria-labelledby="bt4-tab"
+        >
+        <div class="form-group">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                    <select class="form-select form-select-md" name="" id="customerType">
+                        <option value="">Loại khách hàng</option>
+                        <option value="A">Nhà dân</option>
+                        <option value="B">Doanh nghiệp</option>
+                      </select>
+                </div>
+                <div class="col-sm">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="customerId"
+                    placeholder="Mã khách hàng"
+                  />
+                </div>
+                <div class="col-sm">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="connectionNumber"
+                    placeholder="Số kết nối"
+                  />
+                </div>
+                <div class="col-sm">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="channelNumber"
+                      placeholder="Số kênh cao cấp"
+                    />
+                  </div>
+              </div>
+            </div>
+          </div>
+          <button onclick="getTax()" class="btn btn-info mt-5">Tính tiền cáp</button>
+          <div id="resultCableBill" class="mt-5 alert-success"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./bt.js"></script>
+  </body>
+</html>
